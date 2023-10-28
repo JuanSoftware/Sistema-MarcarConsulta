@@ -1,0 +1,44 @@
+CREATE DATABASE Vida;
+GO
+
+-- Use o banco de dados
+USE Vida;
+GO
+
+-- Tabela de Clientes
+CREATE TABLE Client (
+    ClientID INT IDENTITY(1,1) PRIMARY KEY,
+    CPF VARCHAR(11) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    FullName NVARCHAR(100) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    Password NVARCHAR(100) NOT NULL
+);
+GO
+
+-- Tabela de Administradores
+CREATE TABLE Administrator (
+    AdministratorID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Login NVARCHAR(50) NOT NULL,
+    Password NVARCHAR(100) NOT NULL
+);
+GO
+
+-- Tabela de Médicos
+CREATE TABLE Doctor (
+    DoctorID INT IDENTITY(1,1) PRIMARY KEY,
+    FullName NVARCHAR(100) NOT NULL,
+    Specialty NVARCHAR(50) NOT NULL
+);
+GO
+
+-- Tabela de Consultas
+CREATE TABLE Consultation (
+    ConsultationID INT IDENTITY(1,1) PRIMARY KEY,
+    Date DATE NOT NULL,
+    Time TIME NOT NULL,
+    ClientID INT FOREIGN KEY REFERENCES Client(ClientID),
+    DoctorID INT FOREIGN KEY REFERENCES Doctor(DoctorID)
+);
+GO
