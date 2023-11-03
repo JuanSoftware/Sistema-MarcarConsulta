@@ -30,15 +30,15 @@
         {
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Tipo = new System.Windows.Forms.GroupBox();
+            this.checkboxMedico = new System.Windows.Forms.RadioButton();
+            this.checkboxADM = new System.Windows.Forms.RadioButton();
+            this.checkboxCliente = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkboxCliente = new System.Windows.Forms.RadioButton();
-            this.checkboxADM = new System.Windows.Forms.RadioButton();
-            this.checkboxMedico = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
+            this.Tipo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEntrar
@@ -63,17 +63,51 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // groupBox1
+            // Tipo
             // 
-            this.groupBox1.Controls.Add(this.checkboxMedico);
-            this.groupBox1.Controls.Add(this.checkboxADM);
-            this.groupBox1.Controls.Add(this.checkboxCliente);
-            this.groupBox1.Location = new System.Drawing.Point(273, 215);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.Tipo.Controls.Add(this.checkboxMedico);
+            this.Tipo.Controls.Add(this.checkboxADM);
+            this.Tipo.Controls.Add(this.checkboxCliente);
+            this.Tipo.Location = new System.Drawing.Point(273, 215);
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Size = new System.Drawing.Size(200, 100);
+            this.Tipo.TabIndex = 2;
+            this.Tipo.TabStop = false;
+            this.Tipo.Text = "Tipo:";
+            // 
+            // checkboxMedico
+            // 
+            this.checkboxMedico.AutoSize = true;
+            this.checkboxMedico.Location = new System.Drawing.Point(6, 73);
+            this.checkboxMedico.Name = "checkboxMedico";
+            this.checkboxMedico.Size = new System.Drawing.Size(73, 20);
+            this.checkboxMedico.TabIndex = 5;
+            this.checkboxMedico.TabStop = true;
+            this.checkboxMedico.Text = "Medico";
+            this.checkboxMedico.UseVisualStyleBackColor = true;
+            // 
+            // checkboxADM
+            // 
+            this.checkboxADM.AutoSize = true;
+            this.checkboxADM.Location = new System.Drawing.Point(6, 47);
+            this.checkboxADM.Name = "checkboxADM";
+            this.checkboxADM.Size = new System.Drawing.Size(58, 20);
+            this.checkboxADM.TabIndex = 4;
+            this.checkboxADM.TabStop = true;
+            this.checkboxADM.Text = "ADM";
+            this.checkboxADM.UseVisualStyleBackColor = true;
+            // 
+            // checkboxCliente
+            // 
+            this.checkboxCliente.AutoSize = true;
+            this.checkboxCliente.Checked = true;
+            this.checkboxCliente.Location = new System.Drawing.Point(6, 21);
+            this.checkboxCliente.Name = "checkboxCliente";
+            this.checkboxCliente.Size = new System.Drawing.Size(69, 20);
+            this.checkboxCliente.TabIndex = 3;
+            this.checkboxCliente.TabStop = true;
+            this.checkboxCliente.Text = "Cliente";
+            this.checkboxCliente.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -109,40 +143,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Senha:";
             // 
-            // checkboxCliente
-            // 
-            this.checkboxCliente.AutoSize = true;
-            this.checkboxCliente.Checked = true;
-            this.checkboxCliente.Location = new System.Drawing.Point(6, 21);
-            this.checkboxCliente.Name = "checkboxCliente";
-            this.checkboxCliente.Size = new System.Drawing.Size(69, 20);
-            this.checkboxCliente.TabIndex = 3;
-            this.checkboxCliente.TabStop = true;
-            this.checkboxCliente.Text = "Cliente";
-            this.checkboxCliente.UseVisualStyleBackColor = true;
-            // 
-            // checkboxADM
-            // 
-            this.checkboxADM.AutoSize = true;
-            this.checkboxADM.Location = new System.Drawing.Point(6, 47);
-            this.checkboxADM.Name = "checkboxADM";
-            this.checkboxADM.Size = new System.Drawing.Size(58, 20);
-            this.checkboxADM.TabIndex = 4;
-            this.checkboxADM.TabStop = true;
-            this.checkboxADM.Text = "ADM";
-            this.checkboxADM.UseVisualStyleBackColor = true;
-            // 
-            // checkboxMedico
-            // 
-            this.checkboxMedico.AutoSize = true;
-            this.checkboxMedico.Location = new System.Drawing.Point(6, 73);
-            this.checkboxMedico.Name = "checkboxMedico";
-            this.checkboxMedico.Size = new System.Drawing.Size(73, 20);
-            this.checkboxMedico.TabIndex = 5;
-            this.checkboxMedico.TabStop = true;
-            this.checkboxMedico.Text = "Medico";
-            this.checkboxMedico.UseVisualStyleBackColor = true;
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -152,13 +152,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Tipo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEntrar);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Tipo.ResumeLayout(false);
+            this.Tipo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +168,7 @@
 
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox Tipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtSenha;
